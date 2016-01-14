@@ -20,32 +20,28 @@ Check out Gemfile
 === Autenticating user for api
 Its obivious to restrict the ananymous users to access the api. To restrict user access or authenticate valid user, we have two methods
 ==== Basic auth or User credentials
-  <code></code>
-  <code>
+Method
   authenticate_or_request_with_http_basic('User') do |email, password|
     User.find_by_email(email).authenticate(password) unless User.find_by_email(email).nil?
   end
-  </code>
-  ===== Test
-    <code>curl http://localhost:3000/api/v1/users -u "ravi@dev.com:password"</code>
-    Response:
-      sucess: user list
-      failure: HTTP Basic. Access denied
-    for postman see here[/screens/basic_auth.png]
+===== Test
+    curl http://localhost:3000/api/v1/users -u "ravi@dev.com:password"
+  Response:
+    sucess: user list
+    failure: HTTP Basic. Access denied
+for postman see here<code>../screens/basic_auth.png</code>
 
 ==== Api access token
-  <code>
   authenticate_or_request_with_http_token do |token, options|
     ApiKey.exists?(access_token: token)
   end
-  </code>
-
-  ===== Test
-    <code>curl http://localhost:3000/api/v1/users -H 'Authorization: Token token="USER_API_ACCESS_TOKEN"'</code>
-    Response:
-      sucess: user list
-      failure: HTTP Basic. Access denied
-    for postman see here[/screens/http_auth_token.png]
+  
+===== Test
+    curl http://localhost:3000/api/v1/users -H 'Authorization: Token token="USER_API_ACCESS_TOKEN"'
+  Response:
+    sucess: user list
+    failure: HTTP Basic. Access denied
+for postman see here<code>../screens/http_auth_token.png</code>
 
 === References
 * Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
