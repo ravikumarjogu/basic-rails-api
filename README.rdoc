@@ -55,7 +55,7 @@ for postman see here<code>../screens/api_key_secret.png</code>
 * CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
 * Stackoverflow
 ==== Tags
-#Rails-api
-#rails-api-without-devise
-#authentication-in-rails-api
+#Rails-api,
+#rails-api-without-devise,
+#authentication-in-rails-api,
 #headers-rails-api
