@@ -1,5 +1,5 @@
 ==Basic Rails api
-
+Basic Rails api-ready to get started with API with User model and authenticating user for api access
 ===Gems used
 Check out Gemfile
 
