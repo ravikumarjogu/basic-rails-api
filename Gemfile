@@ -12,6 +12,7 @@ gem 'sqlite3'
 gem 'bcrypt',               '3.1.7'
 gem 'responders', '~> 2.0'
 gem 'pry'
+gem 'faker'
 
 
 

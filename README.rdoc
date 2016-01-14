@@ -1,28 +1,53 @@
-== README
+==Basic Rails api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+===Gems used
+Check out Gemfile
 
-Things you may want to cover:
+===Install & Usage
+* git clone
+* cd basic-rails-git
+* bundle install
+* rake db:migrate
+* rake db:seed
+* rails s
 
-* Ruby version
+=== Test
+====Curl
+  curl "http://localhost:3000/api/v1/users"
+====Postman
+  GET "http://localhost:3000/api/v1/users"
 
-* System dependencies
+=== Autenticating user for api
+Its obivious to restrict the ananymous users to access the api. To restrict user access or authenticate valid user, we have two methods
+==== Basic auth or User credentials
+  <code></code>
+  <code>
+  authenticate_or_request_with_http_basic('User') do |email, password|
+    User.find_by_email(email).authenticate(password) unless User.find_by_email(email).nil?
+  end
+  </code>
+  ===== Test
+    <code>curl http://localhost:3000/api/v1/users -u "ravi@dev.com:password"</code>
+    Response:
+      sucess: user list
+      failure: HTTP Basic. Access denied
+    for postman see here[/screens/basic_auth.png]
 
-* Configuration
+==== Api access token
+  <code>
+  authenticate_or_request_with_http_token do |token, options|
+    ApiKey.exists?(access_token: token)
+  end
+  </code>
 
-* Database creation
+  ===== Test
+    <code>curl http://localhost:3000/api/v1/users -H 'Authorization: Token token="USER_API_ACCESS_TOKEN"'</code>
+    Response:
+      sucess: user list
+      failure: HTTP Basic. Access denied
+    for postman see here[/screens/http_auth_token.png]
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== References
+* Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
+* CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
+* Stackoverflow
