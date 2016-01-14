@@ -6,7 +6,7 @@ Check out Gemfile
 
 ===Install & Usage
     $ git clone https://github.com/ravikumarjogu/basic-rails-api/
-    $ cd basic-rails-git
+    $ cd basic-rails-api
     $ bundle install
     $ rake db:migrate
     $ rake db:seed
