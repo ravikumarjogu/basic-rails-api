@@ -1,5 +1,6 @@
 ==Basic Rails api
-Basic Rails api-ready to get started with API with User model and authenticating user for api access
+Basic Rails api-ready to get started with API with User model and authenticating user for api access. Authentication of a user can be done in 3-ways explained below.
+
 ===Gems used
 Check out Gemfile
 
@@ -18,8 +19,8 @@ Check out Gemfile
   GET "http://localhost:3000/api/v1/users"
 
 === Autenticating user for api
-Its obivious to restrict the ananymous users to access the api. To restrict user access or authenticate valid user, we have two methods
-==== Basic auth or User credentials
+Its obivious to restrict the ananymous users to access the api. To restrict user access or authenticate valid user, we have three(3) methods.
+==== 1. Basic auth or User credentials
 Method
   authenticate_or_request_with_http_basic('User') do |email, password|
     User.find_by_email(email).authenticate(password) unless User.find_by_email(email).nil?
@@ -31,7 +32,7 @@ Method
     failure: HTTP Basic. Access denied
 for postman see here<code>../screens/basic_auth.png</code>
 
-==== Api access token
+==== 2. Api access token
   authenticate_or_request_with_http_token do |token, options|
     ApiKey.exists?(access_token: token)
   end
@@ -43,7 +44,7 @@ for postman see here<code>../screens/basic_auth.png</code>
     failure: HTTP Basic. Access denied
 for postman see here<code>../screens/http_auth_token.png</code>
 
-==== Api Key and Secret auth 
+==== 3. Api Key and Secret auth 
     curl http://localhost:3000/api/v1/users -H 'Authorization: Token token="sometoken"' -H 'Api-key: API_ACCESS_TOKEN' -H 'Api-secret: API_ACCESS_SECRET'
   Response:
     success: user list
@@ -53,3 +54,8 @@ for postman see here<code>../screens/api_key_secret.png</code>
 * Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
 * CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
 * Stackoverflow
+==== Tags
+#Rails-api
+#rails-api-without-devise
+#authentication-in-rails-api
+#headers-rails-api
