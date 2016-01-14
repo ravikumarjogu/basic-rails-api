@@ -48,7 +48,7 @@ for postman see here<code>../screens/http_auth_token.png</code>
   Response:
     success: user list
     failure: HTTP Basic. Access denied.
-for postman see here<code>../screens/</code>
+for postman see here<code>../screens/api_key_secret.png</code>
 === References
 * Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
 * CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
