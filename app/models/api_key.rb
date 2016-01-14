@@ -7,5 +7,8 @@ class ApiKey < ActiveRecord::Base
       begin 
         self.access_token=SecureRandom.hex.to_s
       end while ApiKey.exists?(access_token: self.access_token)
+      begin
+        self.access_secret=SecureRandom.hex.to_s
+      end while ApiKey.exists?(access_secret: self.access_secret)
     end
 end
