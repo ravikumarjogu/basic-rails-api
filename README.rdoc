@@ -43,6 +43,12 @@ for postman see here<code>../screens/basic_auth.png</code>
     failure: HTTP Basic. Access denied
 for postman see here<code>../screens/http_auth_token.png</code>
 
+==== Api Key and Secret auth 
+    curl http://localhost:3000/api/v1/users -H 'Authorization: Token token="sometoken"' -H 'Api-key: API_ACCESS_TOKEN' -H 'Api-secret: API_ACCESS_SECRET'
+  Response:
+    success: user list
+    failure: HTTP Basic. Access denied.
+for postman see here<code>../screens/</code>
 === References
 * Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
 * CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
