@@ -5,12 +5,12 @@ Basic Rails api-ready to get started with API with User model and authenticating
 Check out Gemfile
 
 ===Install & Usage
-* git clone
-* cd basic-rails-git
-* bundle install
-* rake db:migrate
-* rake db:seed
-* rails s
+    $ git clone https://github.com/ravikumarjogu/basic-rails-api/
+    $ cd basic-rails-git
+    $ bundle install
+    $ rake db:migrate
+    $ rake db:seed
+    $ rails s
 
 === Test
 ====Curl
