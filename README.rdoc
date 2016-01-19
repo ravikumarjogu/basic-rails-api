@@ -48,12 +48,19 @@ for postman see here<code>../screens/http_auth_token.png</code>
     success: user list
     failure: HTTP Basic. Access denied.
 for postman see here<code>../screens/api_key_secret.png</code>
+=== why
+* Its an API made with Rails, available in open here[https://basic-rails-api.herokuapp.com/api/v1] and used here[https://github.com/ravikumarjogu/Silex-REST-API]
+* If you are building an app for mobile or web, you can use this for try and storage.
 === References
 * Railscasts#352[http://railscasts.com/episodes/352-securing-an-api?view=asciicast]
 * CodeCoder[https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/]
 * Stackoverflow
+=== Lincese
+MIT
+
 ==== Tags
 #Rails-api,
 #rails-api-without-devise,
 #authentication-in-rails-api,
 #headers-rails-api
+
